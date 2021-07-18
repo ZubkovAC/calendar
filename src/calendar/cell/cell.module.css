@@ -1,0 +1,12 @@
+.cell button{
+    background-color: grey;
+    border: 1px solid rgba( 0, 0 , 0 , 0);
+    width: 16%;
+    margin: 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.cell button:hover{
+    border: 1px solid lightslategrey;
+    box-shadow:  0 0 5px 0  whitesmoke;
+}
