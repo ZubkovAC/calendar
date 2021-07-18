@@ -1,21 +1,22 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import {Row, Col, Divider, Input} from 'antd';
+import {Row, Col, Divider, Input ,Pagination} from 'antd';
 import {ColumnWork} from "./columnWork";
 
 export type WorkType = {
     id:number
     name:string
-    currentPosition:string
+    currentPosition:Array<string>
     salary:string
     bonus:number
     monthlySalary:number
 }
 
 const workers: Array<WorkType>= [
-    {id:1,name:'Alex Zybkov',currentPosition:'frontend, junior', salary:'5$', bonus:0, monthlySalary:0 },
-    {id:2,name:'Vlad Ivanov',currentPosition:'backend, middle', salary:'8$', bonus:0, monthlySalary:0 },
-    {id:3,name:'Vladislav Crysh',currentPosition:'director', salary:'25$', bonus:0, monthlySalary:0 },
+    {id:1,name:'Alex Zybkov',currentPosition:['frontend', 'junior'], salary:'5$', bonus:0, monthlySalary:0 },
+    {id:2,name:'Vlad Ivanov',currentPosition:['backend', 'middle'], salary:'8$', bonus:0, monthlySalary:0 },
+    {id:3,name:'Vladislav Crysh',currentPosition:['director'], salary:'25$', bonus:0, monthlySalary:0 },
+    {id:4,name:'Arcadyi Dryi',currentPosition:[ 'frontend', 'senior'], salary:'15$', bonus:0, monthlySalary:0 },
 ]
 
 export const ColumnHeader = () => {
@@ -42,7 +43,9 @@ export const ColumnHeader = () => {
                     </span>
                 })
             }
-
+            <div style={{margin:'30px'}}>
+                <Pagination defaultCurrent={1} total={50} />
+            </div>
         </div>
     );
 };
