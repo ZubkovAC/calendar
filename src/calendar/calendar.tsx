@@ -24,11 +24,11 @@ export const Calendar = () => {
 
                     </div>
                 </div>
-
+                {
+                    edit && <TimeWork />
+                }
             </div>
-            {
-                edit && <TimeWork />
-            }
+
         </div>
 
     );
