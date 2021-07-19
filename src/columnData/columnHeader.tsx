@@ -10,13 +10,18 @@ export type WorkType = {
     salary:string
     bonus:number
     monthlySalary:number
+    hours:Array<number>
 }
 
-const workers: Array<WorkType>= [
-    {id:1,name:'Alex Zybkov',currentPosition:['frontend', 'junior'], salary:'5$', bonus:0, monthlySalary:0 },
-    {id:2,name:'Vlad Ivanov',currentPosition:['backend', 'middle'], salary:'8$', bonus:0, monthlySalary:0 },
-    {id:3,name:'Vladislav Crysh',currentPosition:['director'], salary:'25$', bonus:0, monthlySalary:0 },
-    {id:4,name:'Arcadyi Dryi',currentPosition:[ 'frontend', 'senior'], salary:'15$', bonus:0, monthlySalary:0 },
+export const workers: Array<WorkType>= [
+    {id:1,name:'Alex Zybkov',currentPosition:['frontend', 'junior'], salary:'5$', bonus:0, monthlySalary:0,
+        hours:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+    {id:2,name:'Vlad Ivanov',currentPosition:['backend', 'middle'], salary:'8$', bonus:0, monthlySalary:0,
+        hours:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+    {id:3,name:'Vladislav Crysh',currentPosition:['director'], salary:'25$', bonus:0, monthlySalary:0,
+        hours:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+    {id:4,name:'Arcadyi Dryi',currentPosition:[ 'frontend', 'senior'], salary:'15$', bonus:0, monthlySalary:0,
+        hours:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
 ]
 
 export const ColumnHeader = () => {
@@ -38,7 +43,7 @@ export const ColumnHeader = () => {
             </Row>
             {
                 workers.map(w=>{
-                    return <span>
+                    return <span key={w.id}>
                         <ColumnWork key={w.id}  data={w}/>
                     </span>
                 })

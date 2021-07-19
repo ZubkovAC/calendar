@@ -1,6 +1,7 @@
 .calendar{
     display: flex;
     justify-content: center;
+    margin: 10px;
 }
 .container{
     border:1px solid darkgrey;

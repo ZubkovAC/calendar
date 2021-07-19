@@ -11,11 +11,20 @@ type ColumnWorkPropsType = {
     data: WorkType
 }
 
+
+
 export const ColumnWork: React.FC<ColumnWorkPropsType> = ({data}) => {
     const [edit, setEdit] = useState(false)
+    let  colorL = 'white'
+    if( data.id %2!==0) colorL='rgb(219, 219, 219)'
+    const colorLine ={
+        backgroundColor:colorL,
+        paddingTop:'10px',
+        alignContent:'center'
+    }
     return (
-        <span style={{marginLeft: '30px'}}>
-            <Row justify="space-around">
+        <>
+            <Row style={colorLine} justify="space-around">
                 <Col span={1}>
                     <h3>
                         {data.id}
@@ -31,20 +40,20 @@ export const ColumnWork: React.FC<ColumnWorkPropsType> = ({data}) => {
                     <SalaryColor salary={data.salary}/>
                 </Col>
                 <Col span={2}>
-                     <Input size={'large'} type='number' style={{width:'100px'}} placeholder={data.bonus.toString() }/>
+                     <Input size={'small'} type='number' style={{width:'100px'}} placeholder={data.bonus.toString() }/>
                 </Col>
                 <Col span={6}>
                     <span style={{padding:'20px',fontWeight:600,fontSize:'16px'}}>{data.monthlySalary}</span>
 
-                    <Button type="primary" onClick={() => setEdit(!edit)}>Calculation</Button>
+                    <Button type="primary" size={'small'} onClick={() => setEdit(!edit)}>Calculation</Button>
                 </Col>
             </Row>
             <Row justify="space-around">
                 <Col span={12}>
-                    {edit && <Calendar/>}
+                    {edit && <Calendar />}
                 </Col>
             </Row>
-        </span>
+        </>
     );
 };
 
